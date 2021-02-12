@@ -7,9 +7,9 @@ public class Mensaje {
 	private String nombre;
 	
 	
-	public Mensaje(String mens, String nomb) {
-		this.mensaje = mens;
-		this.nombre = nomb;
+	public Mensaje(String mensaje, String nombre) {
+		this.mensaje = mensaje;
+		this.nombre = nombre;
 	}
 
 
@@ -35,9 +35,9 @@ public class Mensaje {
 
 	@Override
 	public String toString() {
-		return "Mensaje [mensaje=" + mensaje + ", nombre=" + nombre + "]";
+		return nombre + ": " + mensaje;
 	}
-	
+
 	
 	
 

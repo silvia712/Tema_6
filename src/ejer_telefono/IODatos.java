@@ -48,6 +48,7 @@ public class IODatos {
 		}
 	}
 
+	
 	private static void formatearLinea (String linea) {
 		
 		String mensaje="";
@@ -61,13 +62,17 @@ public class IODatos {
 			}
 		}
 		
-		for (int i=0+mensaje.length()+1;i<linea.length();i++) {
+		for (int i=mensaje.length()+1;i<linea.length();i++) {
 			nombre+=linea.substring(i,i+1);		
 			}
 	
 		
-		File w =new File ("whatsapp.txt");
-		PrintWriter pw=null;
+		System.out.println(nombre + ": " + mensaje);
+		
+		
+			File w =new File ("whatsapp.txt");
+			FileWriter fw = null;
+			PrintWriter pw=null;
 		
 		
 		if (!w.exists()) {
@@ -79,24 +84,34 @@ public class IODatos {
 		}
 		
 		try {
-			pw= new PrintWriter(new FileWriter(w,true));
+			fw = new FileWriter(w,true);
+			pw= new PrintWriter(fw);
 			pw.println(nombre + ":" + mensaje);
+			System.out.println("-------------------");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}finally {
-			pw.close();
+			
+			try {
+				pw.close();
+				fw.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			}
 		}
+		
 	}
+		
+
 	
 		
+			
+
 		
-		
-		
-		
 	
 	
 	
-	
-	
-}
+
 

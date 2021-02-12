@@ -3,17 +3,21 @@ package ejer_telefono_vector;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class IODatos {
 
-	public static void leerFichero (String nombreFichero) {
+	
+	public static Mensaje[] leerFichero (String nombreFichero) {
 		
-		Mensaje vMensaje[]=new Mensaje[10];
+		Mensaje vMensaje[]=new Mensaje[20];
 		File f=new File(nombreFichero);
 		FileReader fr=null;
 		Scanner leer=null;
+		int cont=0;
 			
 		if(!f.exists()) {
 			try {
@@ -28,9 +32,9 @@ public class IODatos {
 			leer=new Scanner (fr);
 			
 			 while(leer.hasNext()) {
-				 String linea=leer.next();
-				 formatear_guardar(linea);
-				 // como guardo en el vector?
+				 String linea=leer.nextLine();
+				 vMensaje[cont]=formatear_guardar(linea);
+				 cont++;
 			 }
 			
 		} catch (FileNotFoundException e) {
@@ -43,29 +47,69 @@ public class IODatos {
 			}
 			leer.close();
 		}
+		return vMensaje;
 	}
+	
 	
 	private static Mensaje formatear_guardar (String linea) {
 				
-		String mens="";
-		String nomb="";
+		String mensaje="";
+		String nombre="";
 		
 		for (int i=0; i<linea.length();i++) {
 			if(!linea.substring(i,i+1).equalsIgnoreCase(":")) {
-				mens+=linea.substring(i,i+1);
+				mensaje+=linea.substring(i,i+1);
 			}else {
-				break; //esto no lo entiendo
+				break; 
 			}
 		}
 		
-		for (int i=0+mens.length()+1;i<linea.length();i++) {
-			nomb+=linea.substring(i,i+1);		
+		for (int i=0+mensaje.length()+1;i<linea.length();i++) {
+			nombre+=linea.substring(i,i+1);		
 			}
 		
-			Mensaje m=new Mensaje(mens, nomb);
+			Mensaje m=new Mensaje(mensaje, nombre);
+			
 			return m;
 			
-	} 
+	}
+	
+	public static void escribir_fichero(Mensaje[] vMensaje) {
+		
+		File f =new File ("Whatsapp2.txt");
+		
+		PrintWriter pw=null;
+		FileWriter fw =null;
+		
+		if (!f.exists()) {
+			
+			try {
+				f.createNewFile();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+			
+			
+			try {
+				pw = new PrintWriter(new FileWriter(f));
+				//Recorre vector y guarda mensaje
+				for (Mensaje mensaje : vMensaje) {
+					if (mensaje!= null) {
+						pw.println(mensaje.toString());
+					}
+				}
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}finally {
+				pw.close();
+						
+			}
+			
+		}
+		
+		
+	}
 	
 	
 }
