@@ -87,7 +87,6 @@ public class IODatos {
 			fw = new FileWriter(w,true);
 			pw= new PrintWriter(fw);
 			pw.println(nombre + ":" + mensaje);
-			System.out.println("-------------------");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}finally {
