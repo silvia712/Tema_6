@@ -35,14 +35,15 @@ public class ficheros_binarios {
 	// TERCERO: escribimos en el fichero con FileOutputStream y DataOutputStream
 		
 		
-		try { //FileOutputStream fo= new FileOutputStream(binario,true);
-			  //DataOutputStream escribir =new DataOutputStream(fo);    dentro del try para cerrarlos aqui
+		try   /* (FileOutputStream fo= new FileOutputStream(binario,true); 		tb se puede cerrar aqui
+				DataOutputStream escribir =new DataOutputStream(fo));*/ {     	
+			      
 			
 			FileOutputStream fo= new FileOutputStream(binario,true);
 			DataOutputStream escribir =new DataOutputStream(fo);
 			
 			escribir.writeInt(3);
-			escribir.writeUTF("Silvia Montañes");
+			escribir.writeUTF("Silvia Montaï¿½es");
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -61,7 +62,7 @@ public class ficheros_binarios {
 			DataInputStream leer = new DataInputStream(fi);
 			
 			while(true) {
-				System.out.println(leer.readInt());
+				System.out.println(leer.readInt());   // lee el tamaÃ±o de bits (4 en int)
 				System.out.println(leer.readUTF());
 			}
 			

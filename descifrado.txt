@@ -1,0 +1,3 @@
+preguntas examen
+guarda en un ficero de texto los datos del vector vcontactos nombre y telefono
+lee los datos de un ficero de texto y devuelve un vector de contactos
