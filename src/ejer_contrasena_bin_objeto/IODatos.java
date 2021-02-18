@@ -11,9 +11,9 @@ import java.io.ObjectOutputStream;
 public class IODatos {
 
 	
-	public static String guardar_en_fichero_objetos(Password vContrasena[]) {
+	public static void guardar_en_fichero_objetos(Password vContrasena[], String fichero2) {
 				
-				String fichero2 ="contrasena.dat";
+				//String fichero2 ="contrasena.dat";
 				File f = new File(fichero2);
 				
 				if(!f.exists()) {
@@ -53,7 +53,7 @@ public class IODatos {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				return fichero2;
+			
 			}
 	
 	
@@ -82,12 +82,12 @@ public class IODatos {
 			leer=new ObjectInputStream(fi);
 			
 			/*while(true) {
-				vPass[cont] = (Password) leer.readObject();
+				vPass[cont] = (Password) leer.readObject();  //casting. While true pq se leeran objetos
 				cont++;
 			}*/
 			
-			vPass= (Password[]) leer.readObject();
-					
+			vPass= (Password[]) leer.readObject();		//sin while true pq se lee un vector.Si hubiera mas vectores
+														// seria con while true
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

@@ -2,7 +2,7 @@ package ejer_contrasena_bin_objeto;
 
 import java.io.Serializable;
 
-public class Password implements Serializable {			// implements serializable
+public class Password implements Serializable {			// implements serial
 
 	private String usuario;
 	private int password;

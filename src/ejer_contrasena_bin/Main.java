@@ -8,10 +8,10 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		Password vContrasena[]= new Password[10];
-		vContrasena[0]= new Password("silvia",3,false);
+		/*vContrasena[0]= new Password("silvia",3,false);
 		vContrasena[1]= new Password("ivan",2578,true);
 			
-		IODatos.guardar_datos(vContrasena);
+		IODatos.guardar_datos(vContrasena);*/
 		
 		
 		
@@ -23,8 +23,9 @@ public class Main {
 				
 			
 			for (int i=0; i<vContrasena.length;i++) {
-				if (vContrasena==null) {
+				if (vContrasena[i]==null) {
 						vContrasena[i]= new Password(usuario,password,segura);
+						break;
 					}
 				}
 		IODatos.guardar_datos(vContrasena);

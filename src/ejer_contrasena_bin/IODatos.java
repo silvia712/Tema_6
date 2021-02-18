@@ -27,7 +27,7 @@ public class IODatos {
 			}
 			
 			try {
-				FileOutputStream fo = new FileOutputStream(f,true);
+				FileOutputStream fo = new FileOutputStream(f);
 				DataOutputStream escribir = new DataOutputStream(fo);
 				
 				for (Password p: vContrasena) {		
