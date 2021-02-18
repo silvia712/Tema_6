@@ -56,35 +56,35 @@ public class IODatos {
 	
 	private static Persona formatearLinea (String linea, int longitudLinea) {
 		
-		Persona p;
-		String nombre="", apellido="";
+			Persona p;
+			String nombre="", apellido="";
+				
+			int nip;
 			
-		int nip;
-		
-		nip=Integer.parseInt(linea.substring(0,6));  
-		
-		
-		for (int i=7; i<linea.length(); i++) {			
-			if(!linea.substring(i, i+1).equalsIgnoreCase(",")) {
-				apellido+=linea.substring(i,i+1);
-			}else {
-				break;
+			nip=Integer.parseInt(linea.substring(0,6));  
+			
+			
+			for (int i=7; i<linea.length(); i++) {			
+				if(!linea.substring(i, i+1).equalsIgnoreCase(",")) {
+					apellido+=linea.substring(i,i+1);
+				}else {
+					break;
+				}
 			}
-		}
-		
-		for (int i=7+apellido.length(); i<linea.length();i++) {
-				nombre+=linea.substring(i,i+1);	
+			
+			for (int i=7+apellido.length(); i<linea.length();i++) {
+					nombre+=linea.substring(i,i+1);	
+				}	
+			
+			String puntos="";
+			
+			for (int i=(Integer.toString(nip).length()+nombre.length()+apellido.length()); i<longitudLinea;i++) {
+				puntos+=".";
 			}	
 		
-		String puntos="";
+					
+			p = new Persona(nombre, apellido, nip);
 		
-		for (int i=(Integer.toString(nip).length()+nombre.length()+apellido.length()); i<longitudLinea;i++) {
-			puntos+=".";
-		}	
-	
-		
-		
-		p = new Persona(nombre, apellido, nip);
 		return p;
 		//p.mostrarDatos(longitudLinea);
 

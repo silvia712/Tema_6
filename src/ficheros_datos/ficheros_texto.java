@@ -1,4 +1,4 @@
-package ficheros_carpetas;
+package ficheros_datos;
 
 import java.io.File;
 import java.io.FileNotFoundException;
