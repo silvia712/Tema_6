@@ -63,9 +63,8 @@ public class IODatos {
 		Password vPass[] = new Password [5];
 		int cont=0;
 		
-		/*File f = new File(fichero2);
-		
-		if(!f.exists()) {
+		/*File f = new File(fichero2);					// Aunque se puede hacer no es conveniente hacerlo asi. 
+		 * if(!f.exists()) {							// Siempre hay que mirar que exista el fichero	
 			try {
 				f.createNewFile();
 			} catch (IOException e) {
@@ -82,12 +81,12 @@ public class IODatos {
 			leer=new ObjectInputStream(fi);
 			
 			/*while(true) {
-				vPass[cont] = (Password) leer.readObject();  //casting. While true pq se leeran objetos
+				vPass[cont] = (Password) leer.readObject();  //Casting. While true pq se leeran objetos (uno detras de otro)
 				cont++;
 			}*/
 			
-			vPass= (Password[]) leer.readObject();		//sin while true pq se lee un vector.Si hubiera mas vectores
-														// seria con while true
+			vPass= (Password[]) leer.readObject();		// Sin while true pq se lee un vector (solo uno)
+														// Si huiera mas vectores seria con while true
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

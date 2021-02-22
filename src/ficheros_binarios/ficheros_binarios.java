@@ -74,7 +74,7 @@ public class ficheros_binarios {
 			DataInputStream leer = new DataInputStream(fi);
 			
 			while(true) {
-				System.out.println(leer.readInt());   	 // lee el tamanyo de bits (4 en int)
+				System.out.println(leer.readInt());   	 // lee el tamaño de bits (4 en int)
 				System.out.println(leer.readUTF());		// UTF para String
 			}
 			

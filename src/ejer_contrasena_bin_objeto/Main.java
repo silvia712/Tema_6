@@ -2,7 +2,7 @@ package ejer_contrasena_bin_objeto;
 
 public class Main {
 
-	private static final String RUTA = "contrasena.dat";
+	private static final String RUTA = "contrasena.dat";  // declarado como constante
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
