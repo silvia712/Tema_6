@@ -28,7 +28,14 @@ public class Main {
 						break;
 					}
 				}
-		IODatos.guardar_datos(vContrasena);
+			
+			for (int i=0;i<vContrasena.length;i++) {
+				System.out.println(vContrasena[i]);
+				
+			}
+			
+			
+		//IODatos.guardar_datos(vContrasena);
 
 		
 		
