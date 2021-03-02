@@ -1,4 +1,4 @@
-package agentes;
+package ejer_agente;
 
 import java.io.Serializable;
 

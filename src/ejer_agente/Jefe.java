@@ -1,4 +1,4 @@
-package agentes;
+package ejer_agente;
 
 public final class Jefe extends Agente {
 
