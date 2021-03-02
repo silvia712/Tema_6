@@ -1,0 +1,7 @@
+Rifle
+Pistola
+Escopeta
+Bazooka
+Ametralladora
+Fusil
+Granadas
